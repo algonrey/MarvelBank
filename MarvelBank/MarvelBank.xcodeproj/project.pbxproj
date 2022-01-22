@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC745E81279C53D800D94CD9 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E80279C53D800D94CD9 /* RestService.swift */; };
+		AC745E84279C540400D94CD9 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E83279C540400D94CD9 /* Constans.swift */; };
+		AC745E87279C5B1600D94CD9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC745E86279C5B1600D94CD9 /* Alamofire */; };
+		AC745E8F279C661700D94CD9 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E8E279C661700D94CD9 /* LoadingVC.swift */; };
+		AC745E92279C6A7300D94CD9 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E91279C6A7300D94CD9 /* Characters.swift */; };
+		AC745E94279C6B1700D94CD9 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E93279C6B1700D94CD9 /* Character.swift */; };
+		AC745E96279C773900D94CD9 /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E95279C773900D94CD9 /* CharactersRequest.swift */; };
+		AC745E99279C7C0900D94CD9 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E98279C7C0900D94CD9 /* Data+Extension.swift */; };
 		AC8FF791279C4DAE00D2D08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF790279C4DAE00D2D08A /* AppDelegate.swift */; };
 		AC8FF793279C4DAE00D2D08A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF792279C4DAE00D2D08A /* SceneDelegate.swift */; };
 		AC8FF795279C4DAE00D2D08A /* CharactersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF794279C4DAE00D2D08A /* CharactersVC.swift */; };
@@ -16,7 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC8FF78D279C4DAE00D2D08A /* MarbelBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarbelBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC745E80279C53D800D94CD9 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		AC745E83279C540400D94CD9 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		AC745E8E279C661700D94CD9 /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		AC745E91279C6A7300D94CD9 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		AC745E93279C6B1700D94CD9 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		AC745E95279C773900D94CD9 /* CharactersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
+		AC745E98279C7C0900D94CD9 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		AC8FF78D279C4DAE00D2D08A /* MarvelBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8FF790279C4DAE00D2D08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8FF792279C4DAE00D2D08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AC8FF794279C4DAE00D2D08A /* CharactersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVC.swift; sourceTree = "<group>"; };
@@ -31,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC745E87279C5B1600D94CD9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,14 +57,49 @@
 			isa = PBXGroup;
 			children = (
 				AC8FF794279C4DAE00D2D08A /* CharactersVC.swift */,
+				AC745E8E279C661700D94CD9 /* LoadingVC.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		AC745E7F279C526000D94CD9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC745E80279C53D800D94CD9 /* RestService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC745E82279C53DC00D94CD9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AC745E83279C540400D94CD9 /* Constans.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AC745E90279C6A5D00D94CD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC745E95279C773900D94CD9 /* CharactersRequest.swift */,
+				AC745E91279C6A7300D94CD9 /* Characters.swift */,
+				AC745E93279C6B1700D94CD9 /* Character.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC745E97279C7BF800D94CD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC745E98279C7C0900D94CD9 /* Data+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AC8FF784279C4DAE00D2D08A = {
 			isa = PBXGroup;
 			children = (
-				AC8FF78F279C4DAE00D2D08A /* MarbelBank */,
+				AC8FF78F279C4DAE00D2D08A /* MarvelBank */,
 				AC8FF78E279C4DAE00D2D08A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,22 +107,26 @@
 		AC8FF78E279C4DAE00D2D08A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC8FF78D279C4DAE00D2D08A /* MarbelBank.app */,
+				AC8FF78D279C4DAE00D2D08A /* MarvelBank.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC8FF78F279C4DAE00D2D08A /* MarbelBank */ = {
+		AC8FF78F279C4DAE00D2D08A /* MarvelBank */ = {
 			isa = PBXGroup;
 			children = (
 				AC8FF790279C4DAE00D2D08A /* AppDelegate.swift */,
 				AC8FF792279C4DAE00D2D08A /* SceneDelegate.swift */,
+				AC745E97279C7BF800D94CD9 /* Extensions */,
+				AC745E90279C6A5D00D94CD9 /* Models */,
+				AC745E82279C53DC00D94CD9 /* Helpers */,
+				AC745E7F279C526000D94CD9 /* Services */,
 				AC745E7E279C4F1500D94CD9 /* VC */,
-				AC8FF7A5279C4E8300D2D08A /* UI */,
+				AC8FF7A5279C4E8300D2D08A /* UI */,
 				AC8FF7A4279C4E7500D2D08A /* Assets  */,
 				AC8FF79E279C4DB100D2D08A /* Info.plist */,
 			);
-			path = MarbelBank;
+			path = MarvelBank;
 			sourceTree = "<group>";
 		};
 		AC8FF7A4279C4E7500D2D08A /* Assets  */ = {
@@ -82,21 +137,21 @@
 			path = "Assets ";
 			sourceTree = "<group>";
 		};
-		AC8FF7A5279C4E8300D2D08A /* UI */ = {
+		AC8FF7A5279C4E8300D2D08A /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				AC8FF796279C4DAE00D2D08A /* Main.storyboard */,
 				AC8FF79B279C4DB100D2D08A /* LaunchScreen.storyboard */,
 			);
-			path = "UI\b\b";
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC8FF78C279C4DAE00D2D08A /* MarbelBank */ = {
+		AC8FF78C279C4DAE00D2D08A /* MarvelBank */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC8FF7A1279C4DB100D2D08A /* Build configuration list for PBXNativeTarget "MarbelBank" */;
+			buildConfigurationList = AC8FF7A1279C4DB100D2D08A /* Build configuration list for PBXNativeTarget "MarvelBank" */;
 			buildPhases = (
 				AC8FF789279C4DAE00D2D08A /* Sources */,
 				AC8FF78A279C4DAE00D2D08A /* Frameworks */,
@@ -106,9 +161,12 @@
 			);
 			dependencies = (
 			);
-			name = MarbelBank;
+			name = MarvelBank;
+			packageProductDependencies = (
+				AC745E86279C5B1600D94CD9 /* Alamofire */,
+			);
 			productName = MarbelBank;
-			productReference = AC8FF78D279C4DAE00D2D08A /* MarbelBank.app */;
+			productReference = AC8FF78D279C4DAE00D2D08A /* MarvelBank.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC8FF788279C4DAE00D2D08A /* Build configuration list for PBXProject "MarbelBank" */;
+			buildConfigurationList = AC8FF788279C4DAE00D2D08A /* Build configuration list for PBXProject "MarvelBank" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -135,11 +193,14 @@
 				Base,
 			);
 			mainGroup = AC8FF784279C4DAE00D2D08A;
+			packageReferences = (
+				AC745E85279C5B1500D94CD9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = AC8FF78E279C4DAE00D2D08A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC8FF78C279C4DAE00D2D08A /* MarbelBank */,
+				AC8FF78C279C4DAE00D2D08A /* MarvelBank */,
 			);
 		};
 /* End PBXProject section */
@@ -164,7 +225,14 @@
 			files = (
 				AC8FF795279C4DAE00D2D08A /* CharactersVC.swift in Sources */,
 				AC8FF791279C4DAE00D2D08A /* AppDelegate.swift in Sources */,
+				AC745E96279C773900D94CD9 /* CharactersRequest.swift in Sources */,
+				AC745E92279C6A7300D94CD9 /* Characters.swift in Sources */,
+				AC745E84279C540400D94CD9 /* Constans.swift in Sources */,
 				AC8FF793279C4DAE00D2D08A /* SceneDelegate.swift in Sources */,
+				AC745E81279C53D800D94CD9 /* RestService.swift in Sources */,
+				AC745E99279C7C0900D94CD9 /* Data+Extension.swift in Sources */,
+				AC745E8F279C661700D94CD9 /* LoadingVC.swift in Sources */,
+				AC745E94279C6B1700D94CD9 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,22 +383,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y969VJH9RB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarbelBank/Info.plist;
+				INFOPLIST_FILE = MarvelBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gr.alberto.MarbelBank;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.alberto.MarvelBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -343,29 +413,31 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y969VJH9RB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarbelBank/Info.plist;
+				INFOPLIST_FILE = MarvelBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gr.alberto.MarbelBank;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.alberto.MarvelBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC8FF788279C4DAE00D2D08A /* Build configuration list for PBXProject "MarbelBank" */ = {
+		AC8FF788279C4DAE00D2D08A /* Build configuration list for PBXProject "MarvelBank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC8FF79F279C4DB100D2D08A /* Debug */,
@@ -374,7 +446,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC8FF7A1279C4DB100D2D08A /* Build configuration list for PBXNativeTarget "MarbelBank" */ = {
+		AC8FF7A1279C4DB100D2D08A /* Build configuration list for PBXNativeTarget "MarvelBank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC8FF7A2279C4DB100D2D08A /* Debug */,
@@ -384,6 +456,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC745E85279C5B1500D94CD9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC745E86279C5B1600D94CD9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC745E85279C5B1500D94CD9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC8FF785279C4DAE00D2D08A /* Project object */;
 }
