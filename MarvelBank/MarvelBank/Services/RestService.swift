@@ -12,9 +12,13 @@ import Alamofire
 class RestService {
     
     
-    static func searchCharacters(completion:@escaping((CharactersRequest?, Error?)->Void))  {
+    static func searchCharacters(offset:Int = 0, completion:@escaping((CharactersRequest?, Error?)->Void))  {
         
-        let request = AF.request(Constants.URLs.characters())
+        var url = Constants.URLs.characters()
+        if offset != 0 {
+            url = "\(url)&offset=\(offset)"
+        }
+        let request = AF.request(url)
         request.responseDecodable(of: CharactersRequest.self) { (response) in
             print("Requesting \(String(describing: response.request?.url))")
 

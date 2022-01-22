@@ -16,12 +16,11 @@ class CharactersVC: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingVC")
-     
-        self.view.addSubview(vc.view)
+             
+        LoadingManager.shared.show(inView: self.view)
         RestService.searchCharacters { characters, error in
             
+            LoadingManager.shared.hide()
             
             
         }

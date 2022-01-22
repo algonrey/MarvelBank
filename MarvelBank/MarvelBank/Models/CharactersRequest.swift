@@ -12,6 +12,6 @@ struct CharactersRequest: Decodable {
     let code: Int
     let status: String
     let copyright: String
-//    let data: Characters
+    let data: Characters
     
 }
