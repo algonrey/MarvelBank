@@ -17,6 +17,8 @@
 		AC745E99279C7C0900D94CD9 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E98279C7C0900D94CD9 /* Data+Extension.swift */; };
 		AC745E9B279C84B400D94CD9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E9A279C84B400D94CD9 /* UIView+Extension.swift */; };
 		AC745E9D279C857700D94CD9 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E9C279C857700D94CD9 /* LoadingManager.swift */; };
+		AC745E9F279C8B1200D94CD9 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E9E279C8B1200D94CD9 /* CharacterCell.swift */; };
+		AC745EA2279C8C8A00D94CD9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AC745EA1279C8C8A00D94CD9 /* Kingfisher */; };
 		AC8FF791279C4DAE00D2D08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF790279C4DAE00D2D08A /* AppDelegate.swift */; };
 		AC8FF793279C4DAE00D2D08A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF792279C4DAE00D2D08A /* SceneDelegate.swift */; };
 		AC8FF795279C4DAE00D2D08A /* CharactersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF794279C4DAE00D2D08A /* CharactersVC.swift */; };
@@ -35,6 +37,7 @@
 		AC745E98279C7C0900D94CD9 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		AC745E9A279C84B400D94CD9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		AC745E9C279C857700D94CD9 /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		AC745E9E279C8B1200D94CD9 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		AC8FF78D279C4DAE00D2D08A /* MarvelBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8FF790279C4DAE00D2D08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8FF792279C4DAE00D2D08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC745EA2279C8C8A00D94CD9 /* Kingfisher in Frameworks */,
 				AC745E87279C5B1600D94CD9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +66,7 @@
 			children = (
 				AC8FF794279C4DAE00D2D08A /* CharactersVC.swift */,
 				AC745E8E279C661700D94CD9 /* LoadingVC.swift */,
+				AC745E9E279C8B1200D94CD9 /* CharacterCell.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			name = MarvelBank;
 			packageProductDependencies = (
 				AC745E86279C5B1600D94CD9 /* Alamofire */,
+				AC745EA1279C8C8A00D94CD9 /* Kingfisher */,
 			);
 			productName = MarbelBank;
 			productReference = AC8FF78D279C4DAE00D2D08A /* MarvelBank.app */;
@@ -201,6 +207,7 @@
 			mainGroup = AC8FF784279C4DAE00D2D08A;
 			packageReferences = (
 				AC745E85279C5B1500D94CD9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AC745EA0279C8C8A00D94CD9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = AC8FF78E279C4DAE00D2D08A /* Products */;
 			projectDirPath = "";
@@ -237,6 +244,7 @@
 				AC745E84279C540400D94CD9 /* Constans.swift in Sources */,
 				AC8FF793279C4DAE00D2D08A /* SceneDelegate.swift in Sources */,
 				AC745E81279C53D800D94CD9 /* RestService.swift in Sources */,
+				AC745E9F279C8B1200D94CD9 /* CharacterCell.swift in Sources */,
 				AC745E9D279C857700D94CD9 /* LoadingManager.swift in Sources */,
 				AC745E99279C7C0900D94CD9 /* Data+Extension.swift in Sources */,
 				AC745E8F279C661700D94CD9 /* LoadingVC.swift in Sources */,
@@ -474,6 +482,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		AC745EA0279C8C8A00D94CD9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -481,6 +497,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC745E85279C5B1500D94CD9 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		AC745EA1279C8C8A00D94CD9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC745EA0279C8C8A00D94CD9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

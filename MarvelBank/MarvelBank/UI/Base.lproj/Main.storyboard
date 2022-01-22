@@ -4,8 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,13 +17,80 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hcX-Id-aZF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fby-wl-RLb">
+                                    <size key="itemSize" width="180" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterCell" id="3w3-mc-yc6" customClass="CharacterCell" customModule="MarvelBank" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yWU-92-C6N">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wolverine" translatesAutoresizingMaskIntoConstraints="NO" id="GDq-Rv-UhW">
+                                                    <rect key="frame" x="40" y="8" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="RrM-Cv-BIS"/>
+                                                        <constraint firstAttribute="height" constant="100" id="XQj-9L-scw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Wolverine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="5cn-gQ-XeV">
+                                                    <rect key="frame" x="52.5" y="110" width="75" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="Ium-a2-by1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.9022391183035714" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GDq-Rv-UhW" firstAttribute="centerX" secondItem="yWU-92-C6N" secondAttribute="centerX" id="9eP-8m-9L1"/>
+                                                <constraint firstItem="5cn-gQ-XeV" firstAttribute="centerX" secondItem="yWU-92-C6N" secondAttribute="centerX" id="BSz-Nf-WCv"/>
+                                                <constraint firstItem="5cn-gQ-XeV" firstAttribute="top" secondItem="GDq-Rv-UhW" secondAttribute="bottom" constant="2" id="WQX-7V-J1a"/>
+                                                <constraint firstItem="GDq-Rv-UhW" firstAttribute="top" secondItem="yWU-92-C6N" secondAttribute="top" constant="8" id="bue-M4-gSv"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5cn-gQ-XeV" secondAttribute="trailing" constant="2" id="ckF-fe-dDF"/>
+                                                <constraint firstAttribute="bottom" secondItem="5cn-gQ-XeV" secondAttribute="bottom" constant="2" id="v84-vm-GbZ"/>
+                                                <constraint firstItem="5cn-gQ-XeV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yWU-92-C6N" secondAttribute="leading" constant="2" id="voL-iP-NXi"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="180" height="160"/>
+                                        <connections>
+                                            <outlet property="name" destination="5cn-gQ-XeV" id="fys-7w-3gy"/>
+                                            <outlet property="thumbnail" destination="GDq-Rv-UhW" id="aMR-NF-Hpe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BHK-lu-Inj"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aCq-BL-cgm"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="hcX-Id-aZF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SbP-vk-Fha"/>
+                            <constraint firstItem="hcX-Id-aZF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="csJ-ZK-4Qe"/>
+                            <constraint firstItem="hcX-Id-aZF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pWO-EF-Vvs"/>
+                            <constraint firstItem="hcX-Id-aZF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qSS-E4-wet"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="hcX-Id-aZF" id="SAR-jL-Bad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="80"/>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
         <!--LoadingVC-->
         <scene sceneID="m4d-4L-v7d">
@@ -59,8 +127,9 @@
     </scenes>
     <resources>
         <image name="ironHelmeloading" width="67" height="67"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="wolverine" width="67" height="67"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.15294117647058825" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

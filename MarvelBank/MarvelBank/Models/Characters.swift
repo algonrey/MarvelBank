@@ -15,4 +15,11 @@ struct Characters: Decodable {
     let count: Int
     let results: [Character]
     
+    init() {
+        offset = 0
+        limit = 0
+        total = 0
+        count = 0
+        results = []
+    }
 }
