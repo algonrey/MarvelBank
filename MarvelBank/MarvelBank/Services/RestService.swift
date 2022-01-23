@@ -19,13 +19,38 @@ class RestService {
     ///   - completion: The completion params, CharactersRequest and Error
     static func searchCharacters(offset:Int = 0, otherParams:String? = nil, completion:@escaping((CharactersRequest?, Error?)->Void))  {
         
-        var url = Constants.URLs.characters()
+        var url = Constants.URLs.characters
         if offset != 0 {
             url = "\(url)&offset=\(offset)"
         }
         if let op = otherParams {
             url = "\(url)\(op)"
         }
+        let request = AF.request(url)
+        request.responseDecodable(of: CharactersRequest.self) { (response) in
+            
+            print("Requesting \(String(describing: response.request?.url))")
+
+            if let error = self.searchForError(response) {
+                completion(nil,error)
+            }else if let charactersReq = response.value{
+                completion(charactersReq,nil)
+            }else{
+                completion(nil, MBError(code: 404, description: MBError.errorDescription(404)))
+            }
+        }
+        
+    }
+    
+    
+    /// Retrive the list of character for a given options
+    /// - Parameters:
+    ///   - id: The id of the character
+    ///   - otherParams: Any other params to be added to the URL (used in the Unit Tests)
+    ///   - completion: The completion params, CharactersRequest and Error
+    static func searchCharacter(id:Int, completion:@escaping((CharactersRequest?, Error?)->Void))  {
+        
+        let url = Constants.URLs.character(id: id)
         let request = AF.request(url)
         request.responseDecodable(of: CharactersRequest.self) { (response) in
             

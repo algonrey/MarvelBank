@@ -87,7 +87,20 @@ extension CharactersVC: UICollectionViewDataSource, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let character = self.characters.results[indexPath.row]
-        self.performSegue(withIdentifier: Constants.Segues.CharacterDetail, sender: character)
+        
+        LoadingManager.shared.show(inView: self.view)
+        
+        RestService.searchCharacter(id: character.id) { charReq, error in
+            
+            LoadingManager.shared.hide()
+            if error != nil {
+                //Error
+                print("")
+            }else if let characters = charReq?.data, let char = characters.results.first {
+                self.performSegue(withIdentifier: Constants.Segues.CharacterDetail, sender: char)
+            }
+        }
+        
         
     }
     

@@ -20,9 +20,14 @@ struct Constants {
     }
     struct URLs {
         static let endpoint = "https://gateway.marvel.com:443/v1/public"
-        static func characters() -> String{
+        static func hashParams() -> String{
             let ts = "\(Date.timeIntervalSinceReferenceDate)"
-            return "\(Constants.URLs.endpoint)/characters?apikey=\(Constants.PUBLIC_KEY)&ts=\(ts)&hash=\(Constants.hash(ts: ts))"
+            return "&ts=\(ts)&hash=\(Constants.hash(ts: ts))"
+        }
+        static let characters = "\(Constants.URLs.endpoint)/characters?apikey=\(Constants.PUBLIC_KEY)\(Constants.URLs.hashParams())"
+        
+        static func character(id:Int) -> String{
+            return "\(Constants.URLs.endpoint)/characters/\(id)?apikey=\(Constants.PUBLIC_KEY)\(Constants.URLs.hashParams())"
         }
     }
     

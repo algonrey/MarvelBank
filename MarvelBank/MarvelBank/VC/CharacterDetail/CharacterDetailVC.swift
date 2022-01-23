@@ -19,13 +19,13 @@ class CharacterDetailVC:UIViewController {
     }
     
     
-    
 }
 
 
 extension CharacterDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        //The imagen and the character description
         return 2
     }
     
@@ -37,6 +37,7 @@ extension CharacterDetailVC: UITableViewDelegate, UITableViewDataSource {
     
         switch indexPath.section {
         case 0:
+            //The imagen cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterImageCell", for: indexPath) as! CharacterImageCell
 
             if let path = self.character?.thumbnail.fullUrl {
@@ -44,21 +45,27 @@ extension CharacterDetailVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterDescriptionCell", for: indexPath) as! CharacterDescriptionCell
-            
-            cell.characterDescription.text = self.character?.description
-            cell.characterName.text = self.character?.name
-            
-            return cell
-        
         default:
-            return UITableViewCell()
+            //the character description cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterDescriptionCell", for: indexPath) as! CharacterDescriptionCell
+            if let ch = self.character {
+                cell.loadCharacter(ch)
+            }
+            return cell
         }
     
     }
     
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            //Set the height for the image
+            return 250
+        }else{
+            return UITableView.automaticDimension
+        }
+        
+    }
     
 }

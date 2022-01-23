@@ -14,6 +14,10 @@ struct Character: Decodable {
     let name: String
     let description: String
     let thumbnail:Thumbnail
+    let series:AvailableElements
+    let comics:AvailableElements
+    let events:AvailableElements
+    let stories:AvailableElements
     
     struct Thumbnail: Decodable{
         let path: String
@@ -25,6 +29,10 @@ struct Character: Decodable {
         var fullUrl:String {
             return "\(self.path).\(self.ext)"
         }
+    }
+    
+    struct AvailableElements:Decodable {
+        let available: Int
     }
     
     
