@@ -10,6 +10,8 @@ import CryptoKit
 
 extension Data {
     
+    
+    /// Convert the data to a MD5 hash string
     var md5: String {
         Insecure.MD5
             .hash(data: self)

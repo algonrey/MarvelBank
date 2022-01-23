@@ -19,6 +19,9 @@
 		AC745E9D279C857700D94CD9 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E9C279C857700D94CD9 /* LoadingManager.swift */; };
 		AC745E9F279C8B1200D94CD9 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745E9E279C8B1200D94CD9 /* CharacterCell.swift */; };
 		AC745EA2279C8C8A00D94CD9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AC745EA1279C8C8A00D94CD9 /* Kingfisher */; };
+		AC745EAA279CA3D800D94CD9 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745EA9279CA3D800D94CD9 /* ApiTests.swift */; };
+		AC745EB1279CA5B300D94CD9 /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745EB0279CA5B300D94CD9 /* UtilsTest.swift */; };
+		AC745EB3279CB8DC00D94CD9 /* MBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC745EB2279CB8DC00D94CD9 /* MBError.swift */; };
 		AC8FF791279C4DAE00D2D08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF790279C4DAE00D2D08A /* AppDelegate.swift */; };
 		AC8FF793279C4DAE00D2D08A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF792279C4DAE00D2D08A /* SceneDelegate.swift */; };
 		AC8FF795279C4DAE00D2D08A /* CharactersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FF794279C4DAE00D2D08A /* CharactersVC.swift */; };
@@ -26,6 +29,16 @@
 		AC8FF79A279C4DB100D2D08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8FF799279C4DB100D2D08A /* Assets.xcassets */; };
 		AC8FF79D279C4DB100D2D08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8FF79B279C4DB100D2D08A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC745EAB279CA3D800D94CD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC8FF785279C4DAE00D2D08A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC8FF78C279C4DAE00D2D08A;
+			remoteInfo = MarvelBank;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AC745E80279C53D800D94CD9 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
@@ -38,6 +51,10 @@
 		AC745E9A279C84B400D94CD9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		AC745E9C279C857700D94CD9 /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
 		AC745E9E279C8B1200D94CD9 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		AC745EA7279CA3D800D94CD9 /* MarvelBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC745EA9279CA3D800D94CD9 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
+		AC745EB0279CA5B300D94CD9 /* UtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
+		AC745EB2279CB8DC00D94CD9 /* MBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBError.swift; sourceTree = "<group>"; };
 		AC8FF78D279C4DAE00D2D08A /* MarvelBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8FF790279C4DAE00D2D08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8FF792279C4DAE00D2D08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AC745EA4279CA3D800D94CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC8FF78A279C4DAE00D2D08A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,6 +118,7 @@
 				AC745E95279C773900D94CD9 /* CharactersRequest.swift */,
 				AC745E91279C6A7300D94CD9 /* Characters.swift */,
 				AC745E93279C6B1700D94CD9 /* Character.swift */,
+				AC745EB2279CB8DC00D94CD9 /* MBError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,10 +132,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AC745EA8279CA3D800D94CD9 /* MarvelBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC745EA9279CA3D800D94CD9 /* ApiTests.swift */,
+				AC745EB0279CA5B300D94CD9 /* UtilsTest.swift */,
+			);
+			path = MarvelBankTests;
+			sourceTree = "<group>";
+		};
 		AC8FF784279C4DAE00D2D08A = {
 			isa = PBXGroup;
 			children = (
 				AC8FF78F279C4DAE00D2D08A /* MarvelBank */,
+				AC745EA8279CA3D800D94CD9 /* MarvelBankTests */,
 				AC8FF78E279C4DAE00D2D08A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				AC8FF78D279C4DAE00D2D08A /* MarvelBank.app */,
+				AC745EA7279CA3D800D94CD9 /* MarvelBankTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +196,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AC745EA6279CA3D800D94CD9 /* MarvelBankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC745EAD279CA3D900D94CD9 /* Build configuration list for PBXNativeTarget "MarvelBankTests" */;
+			buildPhases = (
+				AC745EA3279CA3D800D94CD9 /* Sources */,
+				AC745EA4279CA3D800D94CD9 /* Frameworks */,
+				AC745EA5279CA3D800D94CD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC745EAC279CA3D800D94CD9 /* PBXTargetDependency */,
+			);
+			name = MarvelBankTests;
+			productName = MarvelBankTests;
+			productReference = AC745EA7279CA3D800D94CD9 /* MarvelBankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AC8FF78C279C4DAE00D2D08A /* MarvelBank */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC8FF7A1279C4DB100D2D08A /* Build configuration list for PBXNativeTarget "MarvelBank" */;
@@ -191,6 +245,10 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					AC745EA6279CA3D800D94CD9 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = AC8FF78C279C4DAE00D2D08A;
+					};
 					AC8FF78C279C4DAE00D2D08A = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -214,11 +272,19 @@
 			projectRoot = "";
 			targets = (
 				AC8FF78C279C4DAE00D2D08A /* MarvelBank */,
+				AC745EA6279CA3D800D94CD9 /* MarvelBankTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AC745EA5279CA3D800D94CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC8FF78B279C4DAE00D2D08A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +298,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AC745EA3279CA3D800D94CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC745EAA279CA3D800D94CD9 /* ApiTests.swift in Sources */,
+				AC745EB1279CA5B300D94CD9 /* UtilsTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC8FF789279C4DAE00D2D08A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,6 +316,7 @@
 				AC8FF791279C4DAE00D2D08A /* AppDelegate.swift in Sources */,
 				AC745E96279C773900D94CD9 /* CharactersRequest.swift in Sources */,
 				AC745E92279C6A7300D94CD9 /* Characters.swift in Sources */,
+				AC745EB3279CB8DC00D94CD9 /* MBError.swift in Sources */,
 				AC745E84279C540400D94CD9 /* Constans.swift in Sources */,
 				AC8FF793279C4DAE00D2D08A /* SceneDelegate.swift in Sources */,
 				AC745E81279C53D800D94CD9 /* RestService.swift in Sources */,
@@ -253,6 +329,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC745EAC279CA3D800D94CD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC8FF78C279C4DAE00D2D08A /* MarvelBank */;
+			targetProxy = AC745EAB279CA3D800D94CD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AC8FF796279C4DAE00D2D08A /* Main.storyboard */ = {
@@ -274,6 +358,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AC745EAE279CA3D900D94CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y969VJH9RB;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.alberto.MarvelBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBank.app/MarvelBank";
+			};
+			name = Debug;
+		};
+		AC745EAF279CA3D900D94CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y969VJH9RB;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.alberto.MarvelBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelBank.app/MarvelBank";
+			};
+			name = Release;
+		};
 		AC8FF79F279C4DB100D2D08A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -453,6 +583,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AC745EAD279CA3D900D94CD9 /* Build configuration list for PBXNativeTarget "MarvelBankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC745EAE279CA3D900D94CD9 /* Debug */,
+				AC745EAF279CA3D900D94CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AC8FF788279C4DAE00D2D08A /* Build configuration list for PBXProject "MarvelBank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

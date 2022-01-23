@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 
+///Custom class to show the loading image while the request are being done
 class LoadingManager {
     
     static let shared = LoadingManager()
+    
     var loadingVC:LoadingVC
     
     init() {

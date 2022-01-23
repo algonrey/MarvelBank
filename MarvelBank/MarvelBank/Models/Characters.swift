@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Characters Model to match the api
 struct Characters: Decodable {
     
     let offset: Int
@@ -15,6 +16,8 @@ struct Characters: Decodable {
     let count: Int
     let results: [Character]
     
+    
+    /// Custom initializacion with 0 information, e.g to not show nothing in the main view (initialization of the view)
     init() {
         offset = 0
         limit = 0

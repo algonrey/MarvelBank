@@ -10,6 +10,7 @@ import UIKit
 class CharactersVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var copyright: UILabel!
     
     var characters = Characters()
         
@@ -23,6 +24,7 @@ class CharactersVC: UIViewController {
             }else if let characters = charactersReq?.data {
                 self.characters = characters
                 self.collectionView.reloadData()
+                self.copyright.text = charactersReq?.copyright
             }
             LoadingManager.shared.hide()
             

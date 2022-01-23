@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Character Model to match the api
 struct Character: Decodable {
     
     let id: Int

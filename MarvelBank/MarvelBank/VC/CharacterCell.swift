@@ -12,6 +12,7 @@ import Kingfisher
 class CharacterCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
  
@@ -24,11 +25,14 @@ class CharacterCell: UICollectionViewCell {
     func loadCharacter(_ ch:Character) {
         
         self.name.text = ch.name
-        print(ch.thumbnail.fullUrl)
         if ch.thumbnail.fullUrl.contains("image_not_available") {
             self.thumbnail.image = UIImage(named: "hydra")
+            self.loading.stopAnimating()
         }else{
-            self.thumbnail.kf.setImage(with: URL(string: ch.thumbnail.fullUrl))
+            self.loading.startAnimating()
+            self.thumbnail.kf.setImage(with: URL(string: ch.thumbnail.fullUrl)) { result in
+                self.loading.stopAnimating()
+            }
         }
         
     }
