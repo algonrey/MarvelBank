@@ -10,11 +10,11 @@ import Foundation
 /// Characters Model to match the api
 struct Characters: Decodable {
     
-    let offset: Int
-    let limit: Int
-    let total: Int
-    let count: Int
-    let results: [Character]
+    var offset: Int
+    var limit: Int
+    var total: Int
+    var count: Int
+    var results: [Character]
     
     
     /// Custom initializacion with 0 information, e.g to not show nothing in the main view (initialization of the view)

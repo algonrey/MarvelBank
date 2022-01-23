@@ -16,24 +16,37 @@ class CharactersVC: UIViewController {
         
     override func viewDidAppear(_ animated: Bool) {
              
+        self.retriveCharacters()
+    }
+    
+    
+    /// Retrive the characters from the cloud.
+    private func retriveCharacters(){
+
         LoadingManager.shared.show(inView: self.view)
-        RestService.searchCharacters { charactersReq, error in
+
+        let offset = self.characters.offset + self.characters.limit
+        RestService.searchCharacters(offset: offset) { charactersReq, error in
             
             if error != nil {
                 //Error
             }else if let characters = charactersReq?.data {
-                self.characters = characters
+                self.characters.total = characters.total
+                self.characters.offset = characters.offset
+                self.characters.limit = characters.limit
+                self.characters.count = characters.count
+                self.characters.results.append(contentsOf: characters.results)
+                
                 self.collectionView.reloadData()
                 self.copyright.text = charactersReq?.copyright
             }
             LoadingManager.shared.hide()
             
         }
+
     }
 
 }
-
-
 
 
 
@@ -50,6 +63,15 @@ extension CharactersVC: UICollectionViewDataSource, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterCell", for: indexPath) as! CharacterCell
         
         cell.loadCharacter(character)
+        
+        //Check when we reach the last element (to load more if neccesary)
+        if self.characters.total != self.characters.results.count &&
+            indexPath.row + 1 == self.characters.results.count {
+            
+            self.retriveCharacters()
+            
+        }
+        
         return cell
         
     }

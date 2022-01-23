@@ -158,7 +158,7 @@
         <image name="ironHelmeloading" width="67" height="67"/>
         <image name="wolverine" width="67" height="67"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.15294117647058825" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.15299999713897705" blue="0.23899999260902405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
