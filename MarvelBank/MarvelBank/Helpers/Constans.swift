@@ -26,4 +26,7 @@ struct Constants {
         }
     }
     
+    struct Segues {
+        static let CharacterDetail = "CharacterDetailVC"
+    }
 }

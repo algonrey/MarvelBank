@@ -14,11 +14,10 @@ class CharactersVC: UIViewController {
     
     var characters = Characters()
         
-    override func viewDidAppear(_ animated: Bool) {
-             
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.retriveCharacters()
     }
-    
     
     /// Retrive the characters from the cloud.
     private func retriveCharacters(){
@@ -44,6 +43,15 @@ class CharactersVC: UIViewController {
             
         }
 
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? CharacterDetailVC, let char = sender as? Character {
+            vc.character = char
+        }
+        
     }
 
 }
@@ -73,6 +81,13 @@ extension CharactersVC: UICollectionViewDataSource, UICollectionViewDelegate, UI
         }
         
         return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let character = self.characters.results[indexPath.row]
+        self.performSegue(withIdentifier: Constants.Segues.CharacterDetail, sender: character)
         
     }
     

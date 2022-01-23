@@ -12,7 +12,11 @@ class LoadingVC: UIViewController {
     
     @IBOutlet weak var loadingImg: UIImageView!
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    public func rotate(){
         self.loadingImg.rotate()
     }
     

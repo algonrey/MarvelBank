@@ -21,6 +21,7 @@ class LoadingManager {
     
     func show(inView:UIView){
         inView.addSubview(self.loadingVC.view)
+        self.loadingVC.rotate()
     }
     
     func hide(){
