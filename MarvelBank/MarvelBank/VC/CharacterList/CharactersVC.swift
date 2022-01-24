@@ -13,10 +13,19 @@ class CharactersVC: UIViewController {
     @IBOutlet weak var copyright: UILabel!
     
     var characters = Characters()
-        
+    private let refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Initial retrieval of the characters
         self.retriveCharacters()
+        
+        //Refresh controller configuration
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.white
+        collectionView.alwaysBounceVertical = true
+        collectionView.refreshControl = refreshControl
     }
     
     /// Retrive the characters from the cloud.
@@ -24,11 +33,12 @@ class CharactersVC: UIViewController {
 
         LoadingManager.shared.show(inView: self.view)
 
+        //The next elements are the current offset plus the limit used in the last call
         let offset = self.characters.offset + self.characters.limit
         RestService.searchCharacters(offset: offset) { charactersReq, error in
             
             if error != nil {
-                //Error
+                AlertManager.showErrorAlert(message: error!.localizedDescription, in: self)
             }else if let characters = charactersReq?.data {
                 self.characters.total = characters.total
                 self.characters.offset = characters.offset
@@ -40,9 +50,20 @@ class CharactersVC: UIViewController {
                 self.copyright.text = charactersReq?.copyright
             }
             LoadingManager.shared.hide()
-            
+            self.refreshControl.endRefreshing()
         }
 
+    }
+    
+    @objc
+    private func refresh(_ sender: Any) {
+
+        self.characters.offset = 0
+        self.characters.limit = 0
+        self.characters.results.removeAll()
+        self.collectionView.reloadData()
+        self.retriveCharacters()
+        
     }
     
     
@@ -90,12 +111,12 @@ extension CharactersVC: UICollectionViewDataSource, UICollectionViewDelegate, UI
         
         LoadingManager.shared.show(inView: self.view)
         
+        //Download the character information and send it to the other view.
         RestService.searchCharacter(id: character.id) { charReq, error in
             
             LoadingManager.shared.hide()
             if error != nil {
-                //Error
-                print("")
+                AlertManager.showErrorAlert(message: error!.localizedDescription, in: self)
             }else if let characters = charReq?.data, let char = characters.results.first {
                 self.performSegue(withIdentifier: Constants.Segues.CharacterDetail, sender: char)
             }

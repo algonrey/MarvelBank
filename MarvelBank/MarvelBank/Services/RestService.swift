@@ -26,6 +26,7 @@ class RestService {
         if let op = otherParams {
             url = "\(url)\(op)"
         }
+        
         let request = AF.request(url)
         request.responseDecodable(of: CharactersRequest.self) { (response) in
             
